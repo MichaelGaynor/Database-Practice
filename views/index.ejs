@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Classic Models</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 text-center the-products">
+            <% for (i=0;i<theProducts.length-1;i++){%>
+            <div class="col-sm-4 a-product">
+                <a href="/productline/<%=theProducts[i].productLine%>">
+                <span><%=theProducts[i].productLine%></span>
+                </a>
+            </div>
+            <%}%>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

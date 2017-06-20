@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>This Product</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 list-products">
+            <div class="col-sm-8 col-sm-offset-2 single--list-product">
+                <span>Code: <%=info[0].productCode%></span>
+                <br>
+                <span>Name: <%=info[0].productName%></span>
+                <br>
+                <span>Product Line: <%=info[0].productLine%></span>
+                <br>
+                <span>Scale: <%=info[0].productScale%></span>
+                <br>
+                <span>Vendor: <%=info[0].productVendor%></span>
+                <br>
+                <span>Description: <%=info[0].productDescription%></span>
+                <br>
+                <span>Quantity in Stock: <%=info[0].quantityInStock%></span>
+                <br>
+                <span>Buy Price: <%=info[0].buyPrice%></span>
+                <br>
+                <span>MSRP: <%=info[0].MSRP%></span>
+                <br>
+                <span>Total Orders: <%=numbers[0].theCount%></span>
+                <br>
+                <span>Total Quantity Ordered: <%=numbers[0].theQuant%></span>
+                <%for(i=0;i<info.length;i++){%>
+                <br>
+                <a href="/order/<%=info[i].orderNumber%>">
+                <span>Order Number: <%=info[i].orderNumber%></span>
+                </a>
+                <%}%>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
