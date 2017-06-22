@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>This Order</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 list-products">
+            <div class="col-sm-8 col-sm-offset-2 single--list-product">
+                <%for(i=0;i<products.length;i++){%>
+                <br>
+                <span>Product Name: <%=products[i].productName%></span>
+                <br>
+                <span>Customer Number: <%=products[i].customerNumber%></span>
+                <br>
+                <span>Customer Name: <%=products[i].customerName%></span>
+                <br>
+                <span>Customer City: <%=products[i].city%></span>
+                <br>
+                <span>Employee Name: <%=products[i].firstName%> <%=products[i].lastName%></span>
+                <br>
+                <span>Employee Office: <%=products[i].officeCode%></span>
+                <br>
+                <span>Order Status: <%=products[i].status%></span>
+                <%}%>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

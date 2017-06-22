@@ -39,7 +39,6 @@ router.get('/product/:code', (req,res)=>{
         var selectQuery = "SELECT COUNT(*) as theCount,SUM(quantityOrdered) as theQuant from orderdetails WHERE orderdetails.productCode = ? GROUP BY productCode";
         connection.query(selectQuery,[code],(error,thegoodstuff)=>{
             if (error) throw error;
-            console.log(thegoodstuff);
             res.render('a-product',{
             info: productOrders,
             numbers: thegoodstuff
@@ -56,6 +55,7 @@ router.get('/order/:number', (req,res)=>{
         res.render('order',{
             products: results
         });
+        console.log(results)
     });
 });
 
