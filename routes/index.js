@@ -49,7 +49,7 @@ router.get('/product/:code', (req,res)=>{
 
 router.get('/order/:number', (req,res)=>{
     var number = req.params.number;
-    var selectQuery = "SELECT products.productName,customers.customerNumber,customers.customerName,customers.city,employees.firstName,employees.lastName,employees.officeCode,orders.status FROM orderdetails INNER JOIN orders ON orders.orderNumber = orderdetails.ordernumber INNER JOIN products ON products.productCode = orderdetails.productCode INNER JOIN customers ON customers.customerNumber = orders.customerNumber INNER JOIN employees ON employees.employeeNumber = customers.salesRepEmployeeNumber WHERE orderdetails.orderNumber = ?";
+    var selectQuery = "SELECT products.productName,customers.customerNumber,customers.customerName,customers.city,employees.firstName,employees.lastName,employees.officeCode,orders.status,orderdetails.quantityOrdered * orderdetails.priceEach AS cost FROM orderdetails INNER JOIN orders ON orders.orderNumber = orderdetails.ordernumber INNER JOIN products ON products.productCode = orderdetails.productCode INNER JOIN customers ON customers.customerNumber = orders.customerNumber INNER JOIN employees ON employees.employeeNumber = customers.salesRepEmployeeNumber WHERE orderdetails.orderNumber = ?";
     connection.query(selectQuery, [number],(error,results)=>{
         if (error) throw error;
         res.render('order',{
